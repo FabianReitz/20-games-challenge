@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cw25n0piaqujo"]
+
+[ext_resource type="Texture2D" uid="uid://ccibs2r2n7ba5" path="res://assets/left_pallete.png" id="1_sb48q"]
+[ext_resource type="Script" uid="uid://bxquch0wohuf0" path="res://game.gd" id="1_t88pq"]
+[ext_resource type="Texture2D" uid="uid://dnv4ardrmrxbu" path="res://assets/right_pallete.png" id="2_t88pq"]
+[ext_resource type="Texture2D" uid="uid://d7qcgsbbjbpk" path="res://assets/separator.png" id="3_r0x5m"]
+[ext_resource type="Texture2D" uid="uid://df3oemmmbyv57" path="res://assets/ball.png" id="4_3mrqo"]
+
+[node name="Node2D" type="Node2D" unique_id=1042060894]
+script = ExtResource("1_t88pq")
+
+[node name="left" type="Sprite2D" parent="." unique_id=573011254]
+position = Vector2(8, 192)
+texture = ExtResource("1_sb48q")
+
+[node name="right" type="Sprite2D" parent="." unique_id=766495593]
+position = Vector2(624, 192)
+texture = ExtResource("2_t88pq")
+
+[node name="seperator" type="Sprite2D" parent="." unique_id=1975535849]
+position = Vector2(320, 200)
+texture = ExtResource("3_r0x5m")
+
+[node name="ball" type="Sprite2D" parent="." unique_id=1261924105]
+position = Vector2(320, 192)
+texture = ExtResource("4_3mrqo")
