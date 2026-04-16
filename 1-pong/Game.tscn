@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dnv4ardrmrxbu" path="res://assets/right_pallete.png" id="2_t88pq"]
 [ext_resource type="Texture2D" uid="uid://d7qcgsbbjbpk" path="res://assets/separator.png" id="3_r0x5m"]
 [ext_resource type="Texture2D" uid="uid://df3oemmmbyv57" path="res://assets/ball.png" id="4_3mrqo"]
+[ext_resource type="Script" uid="uid://cq2u2gw2cx5eu" path="res://score_left.gd" id="6_r0x5m"]
+[ext_resource type="Script" uid="uid://y6urbnj3linj" path="res://score_right.gd" id="7_3mrqo"]
 
 [node name="Node2D" type="Node2D" unique_id=1042060894]
 script = ExtResource("1_t88pq")
@@ -24,3 +26,18 @@ texture = ExtResource("3_r0x5m")
 [node name="ball" type="Sprite2D" parent="." unique_id=1261924105]
 position = Vector2(320, 192)
 texture = ExtResource("4_3mrqo")
+
+[node name="score left" type="Label" parent="." unique_id=33319240]
+offset_left = 280.0
+offset_right = 320.0
+offset_bottom = 23.0
+text = "0"
+script = ExtResource("6_r0x5m")
+
+[node name="score right" type="Label" parent="." unique_id=976124047]
+offset_left = 320.0
+offset_right = 360.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("7_3mrqo")

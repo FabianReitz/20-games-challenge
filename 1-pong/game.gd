@@ -5,6 +5,7 @@ var screen_size
 var pad_size
 var direction = Vector2(1.0, 0.0)
 
+
 # Constant for ball speed (in pixels/second)
 const INITIAL_BALL_SPEED = 80
 # Speed of the ball (also in pixels/second)
@@ -19,13 +20,19 @@ func _ready() -> void:
 	pad_size = get_node("left").texture.get_size()
 	set_process(true)
 
+func score(side: String) -> void:
+	print("Point for ", side)
+	if(side == 'Left'):
+		Global.leftScore += 1
+	if(side == 'Right'):
+		Global.rightScore += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var ball_pos = get_node("ball").position
 	var left_rect = Rect2( get_node("left").position - pad_size*0.5, pad_size )
 	var right_rect = Rect2( get_node("right").position - pad_size*0.5, pad_size )
-	
+
 	# Integrate new ball position
 	ball_pos += direction * ball_speed * delta
 	# Flip when touching roof or floor
@@ -39,6 +46,10 @@ func _process(delta: float) -> void:
 		ball_speed *= 1.1
 	# Check gameover
 	if (ball_pos.x < 0 or ball_pos.x > screen_size.x):
+		if(ball_pos.x < 0):
+			score('Right')
+		if(ball_pos.x > screen_size.x):
+			score('Left')
 		ball_pos = screen_size*0.5
 		ball_speed = INITIAL_BALL_SPEED
 		direction = Vector2(-1, 0)
